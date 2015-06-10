@@ -165,7 +165,7 @@ func updateGit(w http.ResponseWriter, section string,
 	}
 
 	cmds := []*exec.Cmd{
-		exec.Command(*git, "remote", "update", "-p"),
+		exec.Command(*git, "remote", "update"),
 		exec.Command(*git, "gc", "--auto"),
 		exec.Command(filepath.Join(abspath, "hooks/post-fetch")),
 		exec.Command(filepath.Join(*thePath, "bin/post-fetch")),
